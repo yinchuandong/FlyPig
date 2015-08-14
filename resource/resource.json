@@ -1,0 +1,120 @@
+{
+"groups":
+	[
+        {"name":"preload","keys":"zhadan3,zhadan2,jidan3,jidan2,shizi2,shizi3,lajiao2,lajiao3,bang1,bgs,laoshi,get,zhu,biao,fei,zhadan3,zhadan2,shizi3,shizi2,jidan3,jidan2,kn2,kn3,shit12,shit13,shit22,shit23,shit23,shit32,shit33,shit42,shit43,shit52,shit53,shit62,shit63,shit72,shit73,shit83,shitshit92,shit93,share2,share3,star3,star2,f3,f2,black2,black3,dd1,dd2,line2,line1,windds,ranks,ranksbg,agains,helps,nengliang,fenshu,kn,jidan,bitmapwind_json,wind_png,star,black,lajiao,shizi,smile_png,smile_json,cry_png,cry_json,w1,w2,shit3,shit4,shit5,shit6,shit7,shit8,shit9,zhadan,bg,11,12,fly_png,fly_json,begins,rank,musicn,musico,share,firshareBtn"},
+        {"name":"fly","keys":"fly_png,fly_json"},
+		{"name":"22","keys":"t1,t2,dd,dd1,dd2"}
+	],
+"resources":
+	[
+	{"name":"laoshi","type":"image","url":"assets/laoshi.png"},
+	{"name":"bang1","type":"image","url":"assets/bang1.png"},
+	{"name":"wo1","type":"image","url":"assets/wo1.png"},
+	{"name":"bgs","type":"image","url":"assets/bgs.png"},
+	{"name":"get","type":"image","url":"assets/get.png"},
+	{"name":"fei","type":"image","url":"assets/fei.png"},
+	{"name":"zhu","type":"image","url":"assets/zhu.png"},
+	{"name":"biao","type":"image","url":"assets/biao.png"},
+	{"name":"zhadan2","type":"image","url":"assets/zhadan2.png"},
+	{"name":"zhadan3","type":"image","url":"assets/zhadan3.png"},
+	{"name":"shizi2","type":"image","url":"assets/shizi2.png"},
+	{"name":"shizi3","type":"image","url":"assets/shizi3.png"},
+	{"name":"jidan2","type":"image","url":"assets/jidan2.png"},
+	{"name":"jidan3","type":"image","url":"assets/jidan3.png"},
+	{"name":"kn2","type":"image","url":"assets/kn2.png"},
+	{"name":"kn3","type":"image","url":"assets/kn3.png"},
+	{"name":"shit92","type":"image","url":"assets/shit92.png"},
+	{"name":"shit93","type":"image","url":"assets/shit93.png"},
+	{"name":"shit83","type":"image","url":"assets/shit83.png"},
+	{"name":"shit72","type":"image","url":"assets/shit72.png"},
+	{"name":"shit73","type":"image","url":"assets/shit73.png"},
+	{"name":"shit62","type":"image","url":"assets/shit62.png"},
+	{"name":"shit63","type":"image","url":"assets/shit63.png"},
+	{"name":"shit52","type":"image","url":"assets/shit52.png"},
+	{"name":"shit53","type":"image","url":"assets/shit53.png"},
+	{"name":"shit42","type":"image","url":"assets/shit42.png"},
+	{"name":"shit43","type":"image","url":"assets/shit43.png"},
+	{"name":"shit32","type":"image","url":"assets/shit32.png"},
+	{"name":"shit33","type":"image","url":"assets/shit33.png"},
+	{"name":"shit12","type":"image","url":"assets/shit12.png"},
+	{"name":"shit13","type":"image","url":"assets/shit13.png"},
+	{"name":"share2","type":"image","url":"assets/share2.png"},
+	{"name":"share3","type":"image","url":"assets/share3.png"},
+	{"name":"star2","type":"image","url":"assets/star2.png"},
+	{"name":"star3","type":"image","url":"assets/star3.png"},
+	{"name":"f2","type":"image","url":"assets/f2.png"},
+	{"name":"f3","type":"image","url":"assets/f3.png"},
+	{"name":"black2","type":"image","url":"assets/black2.png"},
+	{"name":"black3","type":"image","url":"assets/black3.png"},
+	{"name":"dd","type":"image","url":"assets/dd.png"},
+	{"name":"dd1","type":"image","url":"assets/dd1.png"},
+	{"name":"dd2","type":"image","url":"assets/dd2.png"},
+	{"name":"line2","type":"image","url":"assets/line2.png"},
+	{"name":"line1","type":"image","url":"assets/line1.png"},
+	{"name":"ranksbg","type":"image","url":"assets/ranksbg.png"},
+	{"name":"windds","type":"image","url":"assets/windds.png"},
+	{"name":"helps","type":"image","url":"assets/helps.png"},
+	{"name":"ranks","type":"image","url":"assets/ranks.png"},
+	
+	{"name":"kn","type":"image","url":"assets/kn.png"},
+	{"name":"fenshu","type":"image","url":"assets/fenshu.png"},
+	{"name":"nengliang","type":"image","url":"assets/nengliang.png"},
+	
+	
+	
+	
+	
+	{"name":"begins","type":"image","url":"assets/begins.png"},
+      
+       
+        {"name":"shareBtn","type":"image","url":"assets/shareBtn.png"},
+	  {"name":"zhadan","type":"image","url":"assets/zhadan.png"},
+         {"name":"zhadan2","type":"image","url":"assets/zhadan2.png"},
+ {"name":"zhadan3","type":"image","url":"assets/zhadan3.png"},
+	{"name":"rank","type":"image","url":"assets/rank.png"},
+	{"name":"musicn","type":"image","url":"assets/musicn.png"},
+        {"name":"musico","type":"image","url":"assets/musico.png"},
+	{"name":"share","type":"image","url":"assets/share.png"},
+	
+        {"name":"firbg","type":"image","url":"assets/firbg.png"},
+      
+       
+        {"name":"fly_png","type":"image","url":"assets/fly.png"},
+        {"name":"fly_json","type":"json","url":"assets/fly.json"},
+	 {"name":"smile_png","type":"image","url":"assets/smile.png"},
+        {"name":"smile_json","type":"json","url":"assets/smile.json"},
+	 {"name":"cry_png","type":"image","url":"assets/cry.png"},
+        {"name":"cry_json","type":"json","url":"assets/cry.json"},
+
+	  {"name":"11","type":"image","url":"assets/11.png"},
+	    {"name":"12","type":"image","url":"assets/12.png"},
+        {"name":"wind_json","type":"json","url":"assets/winds.json"},
+	 {"name":"wind_png","type":"image","url":"assets/winds.png"},
+	
+	{"name":"shit3","type":"image","url":"assets/shit3.png"},
+	{"name":"shit4","type":"image","url":"assets/shit4.png"},
+	{"name":"shit5","type":"image","url":"assets/shit5.png"},
+	{"name":"shit6","type":"image","url":"assets/shit6.png"},
+	{"name":"shit7","type":"image","url":"assets/shit7.png"},
+	{"name":"shit8","type":"image","url":"assets/shit8.png"},
+	{"name":"shit9","type":"image","url":"assets/shit9.png"},
+	{"name":"jidan2","type":"image","url":"assets/jidan2.png"},
+	{"name":"jidan3","type":"image","url":"assets/jidan3.png"},
+	{"name":"jidan","type":"image","url":"assets/jidan.png"},
+	{"name":"lajiao","type":"image","url":"assets/lajiao.png"},
+	{"name":"lajiao2","type":"image","url":"assets/lajiao2.png"},
+	{"name":"lajiao3","type":"image","url":"assets/lajiao3.png"},
+	{"name":"shizi","type":"image","url":"assets/shizi.png"},
+	{"name":"shizi2","type":"image","url":"assets/shizi2.png"},
+	{"name":"shizi3","type":"image","url":"assets/shizi3.png"},
+	
+	{"name":"star","type":"image","url":"assets/star.png"},
+	
+	
+	{"name":"t1","type":"image","url":"assets/t1.png"},
+	  {"name":"black","type":"image","url":"assets/black.png"},
+	{"name":"t2","type":"image","url":"assets/t2.png"}
+	]
+
+
+}
