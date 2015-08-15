@@ -5,8 +5,13 @@
  */
 class Star extends egret.Bitmap{
     
+    public static SHIZI = "shizi";
+    public static ZHADAN = "zhadan";
+    
+    
     private static cacheDict: Object = {};
     
+    /** 产生的纹理 */
     public textureName: string;
     
 	public constructor(texture:egret.Texture) {

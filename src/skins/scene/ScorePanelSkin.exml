@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin width="480" height="100" xmlns:e="http://ns.egret-labs.org/egret" xmlns:w="http://ns.egret-labs.org/wing">
+	<w:HostComponent name="egret.gui.SkinnableComponent"/>
+	<w:Declarations/>
+	<e:states>
+		<e:State name="normal"/>
+		<e:State name="disabled"/>
+	</e:states>
+	<e:Label id="scoreLabel" textColor="0xF80606" x="404" fontFamily="Microsoft Tai Le" height="41" y="29" size="16" width="73" text="4"/>
+</e:Skin>

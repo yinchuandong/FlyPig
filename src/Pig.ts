@@ -8,6 +8,8 @@ class Pig extends egret.DisplayObjectContainer{
     private stageWidth: number;
     private stageHeight: number;
     
+    public blood: number = 4;
+    
     private mcCry: egret.MovieClip;
     private timer: egret.Timer = new egret.Timer(1500);
     

@@ -11,6 +11,10 @@ class GameScene extends egret.DisplayObjectContainer{
     private bgScene: BgScene;
     private pig: Pig;
     private starList: Star[] = [];
+    private score: number;
+    
+    private guiLayer: egret.gui.UIStage;
+    private scorePanel: ScorePanel;
     
     private starsTimer: egret.Timer = new egret.Timer(3000);
     
@@ -34,6 +38,7 @@ class GameScene extends egret.DisplayObjectContainer{
 	}
 	
 	private initData(): void{
+    	
     	  // 处理背景
         this.bgScene = new BgScene();
         this.addChild(this.bgScene);
@@ -42,13 +47,18 @@ class GameScene extends egret.DisplayObjectContainer{
         this.pig = new Pig();
         this.addChild(this.pig);
         
-        var star: Star = Star.produce("shizi");
-        star.x = this.stageWidth / 2 - star.width / 2;
-        star.y = 100;
-        this.addChild(star);
-        this.starList.push(star);
-        Star.reclaim(star, "shizi");
+//        var star: Star = Star.produce("shizi");
+//        star.x = this.stageWidth / 2 - star.width / 2;
+//        star.y = 100;
+//        this.addChild(star);
+//        this.starList.push(star);
+//        Star.reclaim(star, "shizi");
         
+        this.guiLayer = new egret.gui.UIStage();
+        this.addChild(this.guiLayer);
+        this.scorePanel = new ScorePanel();
+        this.guiLayer.x = this.stageWidth - this.guiLayer.width;
+        this.guiLayer.addElement(this.scorePanel);
        
 	}
 	
@@ -63,18 +73,19 @@ class GameScene extends egret.DisplayObjectContainer{
 	public pause(): void{
         egret.Ticker.getInstance().unregister(this.onTickerHandler, this);
         this.bgScene.pause();
+        this.starsTimer.stop();
 	}
 	
 	private preCreate():void{
         var i: number;
         for(i = 0;i < 10; i++){
-            var star: Star = Star.produce("shizi");
-            Star.reclaim(star, "shizi");
+            var star: Star = Star.produce(Star.SHIZI);
+            Star.reclaim(star, star.textureName);
         }
 	}
 	
 	private createStars(evt: egret.TimerEvent):void{
-        var star: Star = Star.produce("shizi");
+        var star: Star = Star.produce(Star.SHIZI);
         star.x = Math.random() * (this.stageWidth - star.width);
         star.y = -star.height - Math.random() * 300;
         this.addChild(star);
@@ -107,6 +118,17 @@ class GameScene extends egret.DisplayObjectContainer{
             }
             
             if(GameUtil.hitPigTest(star, this.pig)){
+                switch (star.textureName){
+                
+                    case Star.SHIZI:
+                        delArr.push(star);
+                        this.pig.blood -= 1;
+                        this.scorePanel.dispatchEventWith("scoreChange", false, "blood:" + this.pig.blood);
+                        break;
+                }
+            }
+            
+            if(this.pig.blood == 0){
                 this.pause();
             }
 	    }
@@ -115,6 +137,7 @@ class GameScene extends egret.DisplayObjectContainer{
             var star = delArr[i];
             this.removeChild(star);
             this.starList.splice(this.starList.indexOf(star),1);
+            Star.reclaim(star, star.textureName);
         }
 	}
 	
