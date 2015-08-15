@@ -12,6 +12,7 @@ class GameScene extends egret.DisplayObjectContainer{
     private pig: Pig;
     private starList: Star[] = [];
     
+    private starsTimer: egret.Timer = new egret.Timer(3000);
     
    
     
@@ -27,6 +28,7 @@ class GameScene extends egret.DisplayObjectContainer{
         this.stageHeight = this.stage.stageHeight;
         
         this.initData();
+        this.preCreate();
         this.start();
         
 	}
@@ -41,23 +43,42 @@ class GameScene extends egret.DisplayObjectContainer{
         this.addChild(this.pig);
         
         var star: Star = Star.produce("shizi");
-        star.x = this.stageWidth / 2;
+        star.x = this.stageWidth / 2 - star.width / 2;
         star.y = 100;
-//        star.scaleX = 0.4;
-//        star.scaleY = 0.4;
-        this.starList.push(star);
         this.addChild(star);
+        this.starList.push(star);
+        Star.reclaim(star, "shizi");
+        
        
 	}
 	
 	public start(): void{
         this.touchEnabled=true;
         this.addEventListener(egret.TouchEvent.TOUCH_MOVE,this.touchHandler,this);
-        egret.Ticker.getInstance().register(this.onTickerHandler, this); 
+        egret.Ticker.getInstance().register(this.onTickerHandler, this);
+        this.starsTimer.addEventListener(egret.TimerEvent.TIMER, this.createStars, this);
+        this.starsTimer.start();
 	}
 	
 	public pause(): void{
         egret.Ticker.getInstance().unregister(this.onTickerHandler, this);
+        this.bgScene.pause();
+	}
+	
+	private preCreate():void{
+        var i: number;
+        for(i = 0;i < 10; i++){
+            var star: Star = Star.produce("shizi");
+            Star.reclaim(star, "shizi");
+        }
+	}
+	
+	private createStars(evt: egret.TimerEvent):void{
+        var star: Star = Star.produce("shizi");
+        star.x = Math.random() * (this.stageWidth - star.width);
+        star.y = -star.height - Math.random() * 300;
+        this.addChild(star);
+        this.starList.push(star);
 	}
 	
 	private touchHandler(evt:egret.TouchEvent):void{
@@ -66,30 +87,36 @@ class GameScene extends egret.DisplayObjectContainer{
             tx = Math.max(this.pig.width / 2,tx);
             tx = Math.min(this.stageWidth - this.pig.width / 2, tx);
             this.pig.x = tx - this.pig.width / 2;
-//            this.pig.
+            
 	    }
 	}
 	
 	
 	private onTickerHandler(frameTime:number):void{
 	    //防止当帧率下降时运动卡顿，需要计算offset系数，使得帧率慢时加快运动速率
-	    var offset = (60 / (1000 / frameTime)); 
-        var star: Star = this.starList[0];
-        star.y += 12 * offset;
-        if(star.y > this.stageHeight){
-            star.y = 0;
-        }
+	    var offset = (60 / (1000 / frameTime));
+        var starNum = this.starList.length;
+        var i: number;
+        var delArr: Star[] = [];
+        for(i = 0; i < starNum; i++){
+            var star: Star = this.starList[i];
+            star.y += 12 * offset;
+            //猪没有吃到星星
+            if(star.y > this.stageHeight){
+                delArr.push(star);
+            }
+            
+            if(GameUtil.hitPigTest(star, this.pig)){
+                this.pause();
+            }
+	    }
 	    
-        if(GameUtil.hitTest(star, this.pig)){
-            GameUtil.hitTest(star,this.pig);
-            this.pause();
-            this.bgScene.pause();
+        for(i = 0;i < delArr.length; i++){
+            var star = delArr[i];
+            this.removeChild(star);
+            this.starList.splice(this.starList.indexOf(star),1);
         }
-        
-//        console.log((star.x + star.width) + "---" + this.pig.x);
-        console.log((star.anchorOffsetX) + "---" + star.x);
 	}
-	
 	
 	
 	

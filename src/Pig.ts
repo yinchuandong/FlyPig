@@ -33,12 +33,18 @@ class Pig extends egret.DisplayObjectContainer{
         this.addChild(this.mcCry);
         this.mcCry.scaleX = 0.4;
         this.mcCry.scaleY = 0.4;
-//        this.anchorX = 0.5;
+        this.mcCry.anchorX = 0.5;
+        this.mcCry.width *= 0.4;
+        this.mcCry.height *= 0.4;
+        this.width = this.mcCry.width;
+        this.height = this.mcCry.height;
+        
 //        this.mcCry.x = this.stageWidth / 2 - this.mcCry.width / 2;
 //        this.mcCry.y = this.stageHeight - this.mcCry.height / 2;
         
+        
         this.x = this.stageWidth / 2 - this.mcCry.width / 2;
-        this.y = this.stageHeight - this.mcCry.height / 2;
+        this.y = this.stageHeight - this.mcCry.height - 20;
         this.mcCry.gotoAndPlay(0);
         
         

@@ -12,7 +12,6 @@ class Star extends egret.Bitmap{
 	public constructor(texture:egret.Texture) {
         super(texture);
         
-//        this.anchorX = 0.5;
         this.width = this.width * 0.4;
         this.height = this.height * 0.4;
 	}
